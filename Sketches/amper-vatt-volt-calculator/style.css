@@ -1,0 +1,37 @@
+.parent {
+    position: absolute;
+    margin: 250px;
+    width: 20px;
+    background-color: yellow;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+
+.left-child {
+    position: relative;
+    height: 50px;
+    width: 0;
+    left: 0;
+    background-color: green;
+    border-radius: 0 5px 5px 0;
+    transition: 1s;
+}
+
+.parent:hover>.left-child {
+    width: 100px;
+}
+
+.right-child {
+    position: relative;
+    height: 50px;
+    width: 0;
+    left: 0;
+    background-color: blue;
+    border-radius: 5px 0 0 5px;
+    transition: 1s;
+}
+
+.parent:hover>.right-child {
+    width: 100px;
+    left: -101px;
+}
