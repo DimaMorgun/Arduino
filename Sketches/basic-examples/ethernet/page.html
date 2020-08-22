@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="lightOn()">Включить</button>
+    <button onclick="lightOff()">Выключить</button>
+
+    <script>
+        var xhr = new XMLHttpRequest();
+
+        function lightOn() {
+            xhr.open('GET', 'http://192.168.1.100/light?signalStatus=1', true);
+            xhr.send(null);
+            xhr.response();
+        }
+
+        function lightOff() {
+            xhr.open('GET', 'http://192.168.1.100/light?signalStatus=0', true);
+            xhr.send(null);
+            xhr.response();
+        }
+    </script>
+</body>
+
+</html>
