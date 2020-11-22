@@ -1,9 +1,9 @@
-int LED_PIN = 13;
-
 void setup() {
-  Serial.begin(9600);
+  pinMode(PB3, OUTPUT);
 }
-
 void loop() {
-  Serial.println("12");
+  digitalWrite(PB3, HIGH);
+  delay(500);
+  digitalWrite(PB3, LOW);
+  delay(500);
 }

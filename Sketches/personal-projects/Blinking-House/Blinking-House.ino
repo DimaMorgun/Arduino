@@ -23,12 +23,11 @@ int TIME_START_LIGHT_OFF = 22;
 int TIME_END_LIGHT_OFF = 24;
 int HOUR_MULTIPLIER = 100;
 int CHANCE_DECREASE = 50;
-int LIGHTS_COUNT = 14;
-//int DELAY_TIME = 1000 * 60;
+int LIGHTS_COUNT = 15; // WARNING HERE SHOULD BE LENGTH OF "lightPins" ARRAY;
 int DELAY_TIME = 1000 * 30;
 
-int lightPins[14] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13}; // WARNING HERE SHOULD BE "LIGHTS_COUNT" VALUE;
-int turnedOnLightPins[14] = { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1}; // WARNING HERE SHOULD BE "LIGHTS_COUNT" VALUE;
+int lightPins[15] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 17, 18, 19}; // WARNING HERE SHOULD BE "LIGHTS_COUNT" VALUE;
+int turnedOnLightPins[15] = { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1}; // WARNING HERE SHOULD BE "LIGHTS_COUNT" VALUE;
 int usedLights = 0;
 
 void setup ()
@@ -51,10 +50,11 @@ void loop ()
     // Do nothing for now.
   }
   if (isInLightOffStage()) {
-    // Do nothing for now.
+    handleLightOffStage();
   }
 
   Serial.println("Delay...");
+  Serial.println(usedLights);
   delay(DELAY_TIME);
 }
 
@@ -126,10 +126,50 @@ bool isInLightStandStage() {
 
 bool isInLightOffStage() {
   int currentTimeValue = getTimeValue();
-  int stageStartTimeValue = TIME_START_LIGHT_OFF * HOUR_MULTIPLIER;
-  int stageEndTimeValue = TIME_END_LIGHT_OFF * HOUR_MULTIPLIER;
+  int stageStartTimeValue = getLightOffStageStartTime();
+  int stageEndTimeValue = getLightOffStageEndTime();
 
   return stageStartTimeValue <= currentTimeValue && currentTimeValue < stageEndTimeValue;
+}
+
+void handleLightOffStage() {
+  int timeValue = getTimeValue();
+  int startTime = getLightOffStageStartTime();
+  int endTime = getLightOffStageEndTime();
+  int randomValue = getRandomValue();
+
+  int value = getMappedPercentageValue(timeValue, startTime, endTime);
+
+  if (isInSuccessRange(value, randomValue)) {
+    turnOffLight();
+  }
+}
+
+int getLightOffStageStartTime() {
+  return TIME_START_LIGHT_OFF * HOUR_MULTIPLIER;
+}
+
+int getLightOffStageEndTime() {
+  return TIME_END_LIGHT_OFF * HOUR_MULTIPLIER;
+}
+
+void turnOffLight() {
+  if (usedLights > 0) {
+    int lightPin = -1;
+    bool isPinUsed = true;
+
+    do {
+      int randomPin = random(0, LIGHTS_COUNT);
+      lightPin = turnedOnLightPins[randomPin];
+
+      if(lightPin != -1){
+        digitalWrite(lightPin, LOW);
+        usedLights--;
+        turnedOnLightPins[randomPin] = -1;
+        isPinUsed = false;
+      }
+    } while (isPinUsed);
+  }
 }
 
 int getTimeValue() {
