@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attiny microcontrollers</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <!-- <div class="content-section">
+        <input type="range" id="collapse-rate" name="collapse-rate" min="5" max="50">
+        <label for="collapse-rate">Collapse Rate</label>
+    </div> -->
+
+    <div class="content-section">
+        <table style="table-layout:fixed;border-collapse: collapse; text-align: center; vertical-align: top;" border="1"
+            cellspacing="1" cellpadding="1" align="center">
+            <tbody>
+                <tr class="not-filtered" style="border-collapse: separate;">
+                    <td rowspan="2"></td>
+                    <td rowspan="2" valign="center"><strong> Обозначение</strong></td>
+                    <td rowspan="2"><strong> Память<br> программ<br> (FLASH)<br> [Kбайт]</strong></td>
+                    <td colspan="2"><strong>Память<br> данных<br> [байт] </strong></td>
+                    <td rowspan="2"><strong>Kол-во<br> команд</strong></td>
+                    <td rowspan="2"><strong>Kол-во<br> линий<br> ввода/<br> вывода</strong></td>
+                    <td rowspan="2"><strong>Kол-во<br> внешних<br> источников<br> прерываний</strong></td>
+                    <td colspan="2"><strong>Таймеры</strong></td>
+                    <td rowspan="2"><strong>ШИМ</strong></td>
+                    <td rowspan="2" width="51"><strong>АЦП<br> (10-<br>разр.)</strong></td>
+                    <td rowspan="2"><strong>Схема<br> BOD</strong></td>
+                    <td rowspan="2"><strong>Рабочая<br> частота<br> [МГц] </strong></td>
+                    <td rowspan="2"><strong> Напря-<br> жение<br> питания<br> [В] </strong></td>
+                    <td colspan="5"><strong>Кол-во ножек<br> в корпусе</strong></td>
+                    <td rowspan="2"><strong>Datasheet</strong></td>
+                    <td rowspan="2"></td>
+                </tr>
+                <tr class="not-filtered">
+                    <td><strong>EEPROM</strong></td>
+                    <td><strong>SRAM</strong></td>
+                    <td><strong>8-<br>разрядн.</strong></td>
+                    <td><strong>16-<br> разрядн.</strong></td>
+                    <td><strong>PDIP</strong></td>
+                    <td><strong>SOIC</strong></td>
+                    <td><strong>MLF/<br> QFN </strong></td>
+                    <td><strong>VQFN</strong></td>
+                    <td><strong>Другой<br> тип </strong></td>
+                </tr>
+                <tr class="alternateRow">
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/opu55arle87rsj6/ATtiny4%2C5%2C9%2C10.pdf">ATtiny4</a></td>
+                    <td title="Память программ (flash), КБ">0.5</td>
+                    <td title="EEPROM, Б">0</td>
+                    <td title="SRAM, Б">32</td>
+                    <td title="Кол-во команд">54</td>
+                    <td title="Кол-во линий ввода/вывода">4</td>
+                    <td title="Кол-во внешних источников прерываний">4</td>
+                    <td title="Кол-во 8-разрядн. таймеров">0</td>
+                    <td title="Кол-во 16-разрядн. таймеров">1</td>
+                    <td title="ШИМ">2</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">-</td>
+                    <td title="Схема Brown-Out Detection">-</td>
+                    <td title="Рабочая частота, МГц">0... 4<br> 0... 8<br> 0... 12</td>
+                    <td title="Напряжение питания, В">1.8... 5.5<br> 2.7... 5.5<br> 4.5...5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">-</td>
+                    <td title="Кол-во ножек в корпусе SOIC">-</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">-</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">SOT23-6<br> UDFN-8</td>
+                    <td class="normalRow" title="Документация" rowspan="4"><a
+                            href="https://www.dropbox.com/s/baiaud2b9ke1kzy/Sum%20ATtiny4%2C5%2C9%2C10.pdf">Summary</a><br><a
+                            href="https://www.dropbox.com/s/opu55arle87rsj6/ATtiny4%2C5%2C9%2C10.pdf">Preliminary</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/opu55arle87rsj6/ATtiny4%2C5%2C9%2C10.pdf">ATtiny5</a></td>
+                    <td title="Память программ (flash), КБ">0.5</td>
+                    <td title="EEPROM, Б">0</td>
+                    <td title="SRAM, Б">32</td>
+                    <td title="Кол-во команд">54</td>
+                    <td title="Кол-во линий ввода/вывода">4</td>
+                    <td title="Кол-во внешних источников прерываний">4</td>
+                    <td title="Кол-во 8-разрядн. таймеров">0</td>
+                    <td title="Кол-во 16-разрядн. таймеров">1</td>
+                    <td title="ШИМ">2</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">4<br> (8-разр.)</td>
+                    <td title="Схема Brown-Out Detection">-</td>
+                    <td title="Рабочая частота, МГц">0... 4<br> 0... 8<br> 0... 12</td>
+                    <td title="Напряжение питания, В">1.8... 5.5<br> 2.7... 5.5<br> 4.5...5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">-</td>
+                    <td title="Кол-во ножек в корпусе SOIC">-</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">-</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">SOT23-6<br> UDFN-8</td>
+                </tr>
+                <tr class="alternateRow">
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/opu55arle87rsj6/ATtiny4%2C5%2C9%2C10.pdf">ATtiny9</a></td>
+                    <td title="Память программ (flash), КБ">1</td>
+                    <td title="EEPROM, Б">0</td>
+                    <td title="SRAM, Б">32</td>
+                    <td title="Кол-во команд">54</td>
+                    <td title="Кол-во линий ввода/вывода">4</td>
+                    <td title="Кол-во внешних источников прерываний">4</td>
+                    <td title="Кол-во 8-разрядн. таймеров">0</td>
+                    <td title="Кол-во 16-разрядн. таймеров">1</td>
+                    <td title="ШИМ">2</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">-</td>
+                    <td title="Схема Brown-Out Detection">-</td>
+                    <td title="Рабочая частота, МГц">0... 4<br> 0... 8<br> 0... 12</td>
+                    <td title="Напряжение питания, В">1.8... 5.5<br> 2.7... 5.5<br> 4.5...5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">-</td>
+                    <td title="Кол-во ножек в корпусе SOIC">-</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">-</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">SOT23-6<br> UDFN-8</td>
+                </tr>
+                <tr>
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/opu55arle87rsj6/ATtiny4%2C5%2C9%2C10.pdf">ATtiny10</a></td>
+                    <td title="Память программ (flash), КБ">1</td>
+                    <td title="EEPROM, Б">0</td>
+                    <td title="SRAM, Б">32</td>
+                    <td title="Кол-во команд">54</td>
+                    <td title="Кол-во линий ввода/вывода">4</td>
+                    <td title="Кол-во внешних источников прерываний">4</td>
+                    <td title="Кол-во 8-разрядн. таймеров">0</td>
+                    <td title="Кол-во 16-разрядн. таймеров">1</td>
+                    <td title="ШИМ">2</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">4<br> (8-разр.)</td>
+                    <td title="Схема Brown-Out Detection">-</td>
+                    <td title="Рабочая частота, МГц">0... 4<br> 0... 8<br> 0... 12</td>
+                    <td title="Напряжение питания, В">1.8... 5.5<br> 2.7... 5.5<br> 4.5...5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">-</td>
+                    <td title="Кол-во ножек в корпусе SOIC">-</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">-</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">SOT23-6<br> UDFN-8</td>
+                </tr>
+                <tr class="alternateRow">
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/u4kikximq3ibodk/ATtiny11%2C12.pdf">ATtiny11</a></td>
+                    <td title="Память программ (flash), КБ">1</td>
+                    <td title="EEPROM, Б">-</td>
+                    <td title="SRAM, Б">-</td>
+                    <td title="Кол-во команд">90</td>
+                    <td title="Кол-во линий ввода/вывода">6</td>
+                    <td title="Кол-во внешних источников прерываний">1</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">0</td>
+                    <td title="ШИМ">-</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">-</td>
+                    <td title="Схема Brown-Out Detection">-</td>
+                    <td title="Рабочая частота, МГц">0…6</td>
+                    <td title="Напряжение питания, В">4…5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">8</td>
+                    <td title="Кол-во ножек в корпусе SOIC">8</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">-</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                    <td class="normalRow" title="Документация" rowspan="5"><a
+                            href="https://www.dropbox.com/s/vv4u0l0oz2a8h63/Sum%20ATtiny11%2C12.pdf">Summary</a><br><a
+                            href="https://www.dropbox.com/s/u4kikximq3ibodk/ATtiny11%2C12.pdf">Preliminary</a></td>
+                </tr>
+                <tr>
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/u4kikximq3ibodk/ATtiny11%2C12.pdf">ATtiny11L</a></td>
+                    <td title="Память программ (flash), КБ">1</td>
+                    <td title="EEPROM, Б">-</td>
+                    <td title="SRAM, Б">-</td>
+                    <td title="Кол-во команд">90</td>
+                    <td title="Кол-во линий ввода/вывода">6</td>
+                    <td title="Кол-во внешних источников прерываний">1</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">0</td>
+                    <td title="ШИМ">-</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">-</td>
+                    <td title="Схема Brown-Out Detection">-</td>
+                    <td title="Рабочая частота, МГц">0…2</td>
+                    <td title="Напряжение питания, В">2.7…5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">8</td>
+                    <td title="Кол-во ножек в корпусе SOIC">8</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">-</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                </tr>
+                <tr class="alternateRow">
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/u4kikximq3ibodk/ATtiny11%2C12.pdf">ATtiny12</a></td>
+                    <td title="Память программ (flash), КБ">1</td>
+                    <td title="EEPROM, Б">64</td>
+                    <td title="SRAM, Б">-</td>
+                    <td title="Кол-во команд">90</td>
+                    <td title="Кол-во линий ввода/вывода">6</td>
+                    <td title="Кол-во внешних источников прерываний">1</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">0</td>
+                    <td title="ШИМ">-</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">-</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0.. 8</td>
+                    <td title="Напряжение питания, В">4…5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">8</td>
+                    <td title="Кол-во ножек в корпусе SOIC">8</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">-</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                </tr>
+                <tr>
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/u4kikximq3ibodk/ATtiny11%2C12.pdf">ATtiny12V</a></td>
+                    <td title="Память программ (flash), КБ">1</td>
+                    <td title="EEPROM, Б">64</td>
+                    <td title="SRAM, Б">-</td>
+                    <td title="Кол-во команд">90</td>
+                    <td title="Кол-во линий ввода/вывода">6</td>
+                    <td title="Кол-во внешних источников прерываний">1</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">0</td>
+                    <td title="ШИМ">-</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">-</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0…1.2</td>
+                    <td title="Напряжение питания, В">1.8…5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">8</td>
+                    <td title="Кол-во ножек в корпусе SOIC">8</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">-</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                </tr>
+                <tr class="alternateRow">
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/u4kikximq3ibodk/ATtiny11%2C12.pdf">ATtiny12L</a></td>
+                    <td title="Память программ (flash), КБ">1</td>
+                    <td title="EEPROM, Б">64</td>
+                    <td title="SRAM, Б">-</td>
+                    <td title="Кол-во команд">90</td>
+                    <td title="Кол-во линий ввода/вывода">6</td>
+                    <td title="Кол-во внешних источников прерываний">1</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">0</td>
+                    <td title="ШИМ">-</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">-</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0…4</td>
+                    <td title="Напряжение питания, В">2.7…5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">8</td>
+                    <td title="Кол-во ножек в корпусе SOIC">8</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">-</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                </tr>
+                <tr>
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/8ksnu31s493zb7o/ATtiny13%28V%29.pdf">ATtiny13</a></td>
+                    <td title="Память программ (flash), КБ">1</td>
+                    <td title="EEPROM, Б">64</td>
+                    <td title="SRAM, Б">64</td>
+                    <td title="Кол-во команд">120</td>
+                    <td title="Кол-во линий ввода/вывода">6</td>
+                    <td title="Кол-во внешних источников прерываний">6</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">0</td>
+                    <td title="ШИМ">2</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">4</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0... 10<br> 0... 20</td>
+                    <td title="Напряжение питания, В">2.7... 5.5<br> 4.5... 5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">8</td>
+                    <td title="Кол-во ножек в корпусе SOIC">8</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">10<br> 20</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                    <td class="normalRow" title="Документация" rowspan="2"><a
+                            href="https://www.dropbox.com/s/o73nop4rnlbixt4/Sum%20ATtiny13%28V%29.pdf">Summary</a><br><a
+                            href="https://www.dropbox.com/s/8ksnu31s493zb7o/ATtiny13%28V%29.pdf">Preliminary</a></td>
+                </tr>
+                <tr class="alternateRow">
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/8ksnu31s493zb7o/ATtiny13%28V%29.pdf">ATtiny13V</a></td>
+                    <td title="Память программ (flash), КБ">1</td>
+                    <td title="EEPROM, Б">64</td>
+                    <td title="SRAM, Б">64</td>
+                    <td title="Кол-во команд">120</td>
+                    <td title="Кол-во линий ввода/вывода">6</td>
+                    <td title="Кол-во внешних источников прерываний">6</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">0</td>
+                    <td title="ШИМ">2</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">4</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0... 4<br> 0... 10</td>
+                    <td title="Напряжение питания, В">1.8... 5.5<br> 2.7... 5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">8</td>
+                    <td title="Кол-во ножек в корпусе SOIC">8</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">10<br> 20</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                </tr>
+                <tr>
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/5jok880u4z58ohk/ATtiny13A.pdf">ATtiny13A</a></td>
+                    <td title="Память программ (flash), КБ">1</td>
+                    <td title="EEPROM, Б">64</td>
+                    <td title="SRAM, Б">64</td>
+                    <td title="Кол-во команд">120</td>
+                    <td title="Кол-во линий ввода/вывода">6</td>
+                    <td title="Кол-во внешних источников прерываний">6</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">0</td>
+                    <td title="ШИМ">2</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">4</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0... 4<br> 0... 10<br> 0... 20</td>
+                    <td title="Напряжение питания, В">1.8... 5.5<br> 2.7... 5.5<br> 4.5...5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">8</td>
+                    <td title="Кол-во ножек в корпусе SOIC">8</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">10<br> 20</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                    <td class="normalRow" title="Документация"><a
+                            href="https://www.dropbox.com/s/k5c00r0fnh79dxo/Sum%20ATtiny13A.pdf">Summary</a><br><a
+                            href="https://www.dropbox.com/s/5jok880u4z58ohk/ATtiny13A.pdf">Preliminary</a></td>
+                </tr>
+                <tr class="alternateRow">
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/gwtqskjbnmi10c2/ATtiny15L.pdf">ATtiny15L</a></td>
+                    <td title="Память программ (flash), КБ">1</td>
+                    <td title="EEPROM, Б">64</td>
+                    <td title="SRAM, Б">-</td>
+                    <td title="Кол-во команд">90</td>
+                    <td title="Кол-во линий ввода/вывода">6</td>
+                    <td title="Кол-во внешних источников прерываний">1</td>
+                    <td title="Кол-во 8-разрядн. таймеров">2</td>
+                    <td title="Кол-во 16-разрядн. таймеров">0</td>
+                    <td title="ШИМ">1</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">4</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">1.6</td>
+                    <td title="Напряжение питания, В">2.7…5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">8</td>
+                    <td title="Кол-во ножек в корпусе SOIC">8</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">-</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                    <td class="normalRow" title="Документация"><a
+                            href="https://www.dropbox.com/s/gwtqskjbnmi10c2/ATtiny15L.pdf">Preliminary</a></td>
+                </tr>
+                <tr>
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/opknouh8jonpxgl/ATtiny20.pdf">ATtiny20</a></td>
+                    <td title="Память программ (flash), КБ">2</td>
+                    <td title="EEPROM, Б">-</td>
+                    <td title="SRAM, Б">128</td>
+                    <td title="Кол-во команд">112</td>
+                    <td title="Кол-во линий ввода/вывода">10 (WLCSP);<br> 12</td>
+                    <td title="Кол-во внешних источников прерываний">12</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">1</td>
+                    <td title="ШИМ">3</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">8</td>
+                    <td title="Схема Brown-Out Detection">-</td>
+                    <td title="Рабочая частота, МГц">0... 4<br> 0... 8<br> 0... 12</td>
+                    <td title="Напряжение питания, В">1.8... 5.5<br> 2.7... 5.5<br> 4.5...5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">-</td>
+                    <td title="Кол-во ножек в корпусе SOIC">14</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">-</td>
+                    <td title="Кол-во ножек в корпусе VQFN">20</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">WLCSP_12<br> TSSOP-14<br> UFBGA-15</td>
+                    <td class="normalRow" title="Документация"><a
+                            href="https://www.dropbox.com/s/tchnp542y1bm319/Sum%20ATtiny20.pdf">Summary</a><br><a
+                            href="https://www.dropbox.com/s/opknouh8jonpxgl/ATtiny20.pdf">Preliminary</a></td>
+                </tr>
+                <tr class="alternateRow">
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/0pvt0yo11dznk2w/ATtiny2313%28V%29.pdf">ATtiny2313</a></td>
+                    <td title="Память программ (flash), КБ">1</td>
+                    <td title="EEPROM, Б">128</td>
+                    <td title="SRAM, Б">128</td>
+                    <td title="Кол-во команд">120</td>
+                    <td title="Кол-во линий ввода/вывода">18</td>
+                    <td title="Кол-во внешних источников прерываний">10</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">1</td>
+                    <td title="ШИМ">4</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">-</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0…10<br> 0…20</td>
+                    <td title="Напряжение питания, В">1.8…5.5<br> 2.7…5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">20</td>
+                    <td title="Кол-во ножек в корпусе SOIC">20</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">20</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                    <td class="normalRow" title="Документация" rowspan="2"><a
+                            href="https://www.dropbox.com/s/zqiixniau3ziem0/Sum%20ATtiny2313%28V%29.pdf">Summary</a><br><a
+                            href="https://www.dropbox.com/s/0pvt0yo11dznk2w/ATtiny2313%28V%29.pdf">Preliminary</a></td>
+                </tr>
+                <tr>
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/0pvt0yo11dznk2w/ATtiny2313%28V%29.pdf">ATtiny2313V</a></td>
+                    <td title="Память программ (flash), КБ">1</td>
+                    <td title="EEPROM, Б">128</td>
+                    <td title="SRAM, Б">128</td>
+                    <td title="Кол-во команд">120</td>
+                    <td title="Кол-во линий ввода/вывода">18</td>
+                    <td title="Кол-во внешних источников прерываний">10</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">1</td>
+                    <td title="ШИМ">4</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">-</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0…4<br> 0…10</td>
+                    <td title="Напряжение питания, В">1.8…5.5<br> 2.7…5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">20</td>
+                    <td title="Кол-во ножек в корпусе SOIC">20</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">20</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                </tr>
+                <tr class="alternateRow">
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/ntdb7pyhw7x0f6t/ATtiny2313A%2C4313.pdf">ATtiny2313A</a></td>
+                    <td title="Память программ (flash), КБ">2</td>
+                    <td title="EEPROM, Б">128</td>
+                    <td title="SRAM, Б">128</td>
+                    <td title="Кол-во команд">120</td>
+                    <td title="Кол-во линий ввода/вывода">18</td>
+                    <td title="Кол-во внешних источников прерываний">18</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">1</td>
+                    <td title="ШИМ">4</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">-</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0... 4<br> 0... 10<br> 0... 20</td>
+                    <td title="Напряжение питания, В">1.8... 5.5<br> 2.7... 5.5<br> 4.5...5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">20</td>
+                    <td title="Кол-во ножек в корпусе SOIC">20</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">20</td>
+                    <td title="Кол-во ножек в корпусе VQFN">20</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                    <td class="normalRow" title="Документация"><a
+                            href="https://www.dropbox.com/s/u1xzxbc819tlrxn/Sum%20ATtiny2313A%2C4313.pdf">Summary</a><br><a
+                            href="https://www.dropbox.com/s/ntdb7pyhw7x0f6t/ATtiny2313A%2C4313.pdf">Preliminary</a></td>
+                </tr>
+                <tr>
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/qlt2fyd3bxq9wj1/ATtiny24%2C44%2C84.pdf">ATtiny24</a></td>
+                    <td title="Память программ (flash), КБ">2</td>
+                    <td title="EEPROM, Б">128</td>
+                    <td title="SRAM, Б">128</td>
+                    <td title="Кол-во команд">120</td>
+                    <td title="Кол-во линий ввода/вывода">12</td>
+                    <td title="Кол-во внешних источников прерываний">13</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">1</td>
+                    <td title="ШИМ">4</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">8+12</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0…10<br> 0…20</td>
+                    <td title="Напряжение питания, В">2.7…5.5<br> 4.5…5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">14</td>
+                    <td title="Кол-во ножек в корпусе SOIC">14</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">20</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                    <td class="normalRow" title="Документация" rowspan="2"><a
+                            href="https://www.dropbox.com/s/2g6wy47bqnh33ra/Sum%20ATtiny24%2C44%2C84.pdf">Summary</a><br><a
+                            href="https://www.dropbox.com/s/qlt2fyd3bxq9wj1/ATtiny24%2C44%2C84.pdf">Preliminary</a></td>
+                </tr>
+                <tr class="alternateRow">
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/qlt2fyd3bxq9wj1/ATtiny24%2C44%2C84.pdf">ATtiny24V</a></td>
+                    <td title="Память программ (flash), КБ">2</td>
+                    <td title="EEPROM, Б">128</td>
+                    <td title="SRAM, Б">128</td>
+                    <td title="Кол-во команд">120</td>
+                    <td title="Кол-во линий ввода/вывода">12</td>
+                    <td title="Кол-во внешних источников прерываний">13</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">1</td>
+                    <td title="ШИМ">4</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">8+12</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0…4<br> 0…10</td>
+                    <td title="Напряжение питания, В">1.8…5.5<br> 2.7…5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">14</td>
+                    <td title="Кол-во ножек в корпусе SOIC">14</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">20</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                </tr>
+                <tr>
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/n65j5f7eaw8a38m/ATtiny24A%2C44A%2C84A.pdf">ATtiny24A</a>
+                    </td>
+                    <td title="Память программ (flash), КБ">2</td>
+                    <td title="EEPROM, Б">128</td>
+                    <td title="EEPROM, Б">128</td>
+                    <td title="Кол-во команд">120</td>
+                    <td title="Кол-во линий ввода/вывода">12</td>
+                    <td title="Кол-во внешних источников прерываний">12</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">1</td>
+                    <td title="ШИМ">4</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">8+12</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0…4<br> 0…20</td>
+                    <td title="Напряжение питания, В">1.8…5.5<br> 4.5 …5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">14</td>
+                    <td title="Кол-во ножек в корпусе SOIC">14</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">20</td>
+                    <td title="Кол-во ножек в корпусе VQFN">20</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">UFBGA-15</td>
+                    <td class="normalRow" title="Документация"><a
+                            href="https://www.dropbox.com/s/bxt8v9u7di8ijoz/Sum%20ATtiny24A%2C44A%2C84A.pdf">Summary</a><br><a
+                            href="https://www.dropbox.com/s/n65j5f7eaw8a38m/ATtiny24A%2C44A%2C84A.pdf">Preliminary</a>
+                    </td>
+                </tr>
+                <tr class="alternateRow">
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/afhf7jial4ujbyi/ATtiny25%28V%29%2C45%28V%29%2C85%28V%29.pdf">ATtiny25</a>
+                    </td>
+                    <td title="Память программ (flash), КБ">2</td>
+                    <td title="EEPROM, Б">128</td>
+                    <td title="SRAM, Б">128</td>
+                    <td title="Кол-во команд">120</td>
+                    <td title="Кол-во линий ввода/вывода">6</td>
+                    <td title="Кол-во внешних источников прерываний">7</td>
+                    <td title="Кол-во 8-разрядн. таймеров">2</td>
+                    <td title="Кол-во 16-разрядн. таймеров">0</td>
+                    <td title="ШИМ">6</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">4+2</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0…10<br> 0…20</td>
+                    <td title="Напряжение питания, В">2.7…5.5<br> 4.5…5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">8</td>
+                    <td title="Кол-во ножек в корпусе SOIC">8</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">20</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                    <td class="normalRow" title="Документация" rowspan="2"><a
+                            href="https://www.dropbox.com/s/ua9w8ciupnpkqvx/Sum%20ATtiny25%28V%29%2C45%28V%29%2C85%28V%29.pdf">Summary</a><br>
+                        <a
+                            href="https://www.dropbox.com/s/afhf7jial4ujbyi/ATtiny25%28V%29%2C45%28V%29%2C85%28V%29.pdf">Preliminary</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/afhf7jial4ujbyi/ATtiny25%28V%29%2C45%28V%29%2C85%28V%29.pdf">ATtiny25V</a>
+                    </td>
+                    <td title="Память программ (flash), КБ">2</td>
+                    <td title="EEPROM, Б">128</td>
+                    <td title="SRAM, Б">128</td>
+                    <td title="Кол-во команд">120</td>
+                    <td title="Кол-во линий ввода/вывода">6</td>
+                    <td title="Кол-во внешних источников прерываний">7</td>
+                    <td title="Кол-во 8-разрядн. таймеров">2</td>
+                    <td title="Кол-во 16-разрядн. таймеров">0</td>
+                    <td title="ШИМ">6</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">4+2</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0…4<br> 0…10</td>
+                    <td title="Напряжение питания, В">1.8…5.5<br> 2.7…5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">8</td>
+                    <td title="Кол-во ножек в корпусе SOIC">8</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">20</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                </tr>
+                <tr class="alternateRow">
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/pojl9hvkh96ozf8/ATtiny26%28L%29.pdf">ATtiny26</a></td>
+                    <td title="Память программ (flash), КБ">2</td>
+                    <td title="EEPROM, Б">128</td>
+                    <td title="SRAM, Б">128</td>
+                    <td title="Кол-во команд">118</td>
+                    <td title="Кол-во линий ввода/вывода">16</td>
+                    <td title="Кол-во внешних источников прерываний">2</td>
+                    <td title="Кол-во 8-разрядн. таймеров">2</td>
+                    <td title="Кол-во 16-разрядн. таймеров">0</td>
+                    <td title="ШИМ">2</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">11+8</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0…16</td>
+                    <td title="Напряжение питания, В">4.5…5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">20</td>
+                    <td title="Кол-во ножек в корпусе SOIC">20</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">32</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                    <td class="normalRow" title="Документация" rowspan="2"><a
+                            href="https://www.dropbox.com/s/zvtaex7g4z4txre/Sum%20ATtiny26%28L%29.pdf">Summary</a><br>
+                        <a href="https://www.dropbox.com/s/pojl9hvkh96ozf8/ATtiny26%28L%29.pdf">Preliminary</a></td>
+                </tr>
+                <tr>
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/pojl9hvkh96ozf8/ATtiny26%28L%29.pdf">ATtiny26L</a></td>
+                    <td title="Память программ (flash), КБ">2</td>
+                    <td title="EEPROM, Б">128</td>
+                    <td title="SRAM, Б">128</td>
+                    <td title="Кол-во команд">118</td>
+                    <td title="Кол-во линий ввода/вывода">16</td>
+                    <td title="Кол-во внешних источников прерываний">2</td>
+                    <td title="Кол-во 8-разрядн. таймеров">2</td>
+                    <td title="Кол-во 16-разрядн. таймеров">0</td>
+                    <td title="ШИМ">2</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">11+8</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0…8</td>
+                    <td title="Напряжение питания, В">2.7…5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">20</td>
+                    <td title="Кол-во ножек в корпусе SOIC">20</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">32</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                </tr>
+                <tr class="alternateRow">
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/jybab7d2e6ofu6z/ATtiny261%28V%29%2C461%28V%29%2C861%28V%29.pdf">ATtiny261</a>
+                    </td>
+                    <td title="Память программ (flash), КБ">2</td>
+                    <td title="EEPROM, Б">128</td>
+                    <td title="EEPROM, Б">128</td>
+                    <td title="Кол-во команд">123</td>
+                    <td title="Кол-во линий ввода/вывода">16</td>
+                    <td title="Кол-во внешних источников прерываний">16</td>
+                    <td title="Кол-во 8-разрядн. таймеров" colspan="2">8/16-разр<br> 8/10-разр</td>
+                    <td title="ШИМ">6</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">11+16</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0…10<br> 0…20</td>
+                    <td title="Напряжение питания, В">2.7…5.5<br> 4.5…5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">20</td>
+                    <td title="Кол-во ножек в корпусе SOIC">20</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">32</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                    <td class="normalRow" title="Документация" rowspan="2"><a
+                            href="https://www.dropbox.com/s/3ayitrqvb0nhdxd/Sum%20ATtiny261%28V%29%2C461%28V%29%2C861%28V%29.pdf">Summary</a><br><a
+                            href="https://www.dropbox.com/s/jybab7d2e6ofu6z/ATtiny261%28V%29%2C461%28V%29%2C861%28V%29.pdf">Preliminary</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/jybab7d2e6ofu6z/ATtiny261%28V%29%2C461%28V%29%2C861%28V%29.pdf">ATtiny261V</a>
+                    </td>
+                    <td title="Память программ (flash), КБ">2</td>
+                    <td title="EEPROM, Б">128</td>
+                    <td title="EEPROM, Б">128</td>
+                    <td title="Кол-во команд">123</td>
+                    <td title="Кол-во линий ввода/вывода">16</td>
+                    <td title="Кол-во внешних источников прерываний">16</td>
+                    <td title="Кол-во 8-разрядн. таймеров" colspan="2">8/16-разр<br> 8/10-разр</td>
+                    <td title="ШИМ">6</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">11+16</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0…4<br> 0…10</td>
+                    <td title="Напряжение питания, В">1.8…5.5<br> 2.7…5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">20</td>
+                    <td title="Кол-во ножек в корпусе SOIC">20</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">32</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                </tr>
+                <tr class="alternateRow">
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/kwo13i56c8oxxqc/ATtiny261A%2C461A%2C861A.pdf">ATtiny261A</a>
+                    </td>
+                    <td title="Память программ (flash), КБ">2</td>
+                    <td title="EEPROM, Б">128</td>
+                    <td title="EEPROM, Б">128</td>
+                    <td title="Кол-во команд">123</td>
+                    <td title="Кол-во линий ввода/вывода">16</td>
+                    <td title="Кол-во внешних источников прерываний">16</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">1</td>
+                    <td title="ШИМ">6</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">11+16</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0... 4<br> 0... 10<br> 0... 20</td>
+                    <td title="Напряжение питания, В">1.8... 5.5<br> 2.7... 5.5<br> 4.5...5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">20</td>
+                    <td title="Кол-во ножек в корпусе SOIC">20</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">32</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">TSSOP-20</td>
+                    <td class="normalRow" title="Документация"><a
+                            href="https://www.dropbox.com/s/h49pzqzmyfothy3/Sum%20ATtiny261A%2C461A%2C861A.pdf">Summary</a><br><a
+                            href="https://www.dropbox.com/s/kwo13i56c8oxxqc/ATtiny261A%2C461A%2C861A.pdf">Preliminary</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/h0r7x2s6fcfgk4j/ATtiny28%28L%2CV%29.pdf">ATtiny28V</a></td>
+                    <td title="Память программ (flash), КБ">2</td>
+                    <td title="EEPROM, Б">-</td>
+                    <td title="SRAM, Б">-</td>
+                    <td title="Кол-во команд">90</td>
+                    <td title="Кол-во линий ввода/вывода">29</td>
+                    <td title="Кол-во внешних источников прерываний">2</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">0</td>
+                    <td title="ШИМ">-</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">-</td>
+                    <td title="Схема Brown-Out Detection">-</td>
+                    <td title="Рабочая частота, МГц">0…1.2</td>
+                    <td title="Напряжение питания, В">1.8…5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">28</td>
+                    <td title="Кол-во ножек в корпусе SOIC">-</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">32</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">TQFP-32</td>
+                    <td class="normalRow" title="Документация" rowspan="2"><a
+                            href="https://www.dropbox.com/s/paqbnpj4rh4n22z/Sum%20ATtiny28%28L%2CV%29.pdf">Summary</a><br>
+                        <a href="https://www.dropbox.com/s/h0r7x2s6fcfgk4j/ATtiny28%28L%2CV%29.pdf">Preliminary</a></td>
+                </tr>
+                <tr class="alternateRow">
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/h0r7x2s6fcfgk4j/ATtiny28%28L%2CV%29.pdf">ATtiny28L</a></td>
+                    <td title="Память программ (flash), КБ">2</td>
+                    <td title="EEPROM, Б">-</td>
+                    <td title="SRAM, Б">-</td>
+                    <td title="Кол-во команд">90</td>
+                    <td title="Кол-во линий ввода/вывода">29</td>
+                    <td title="Кол-во внешних источников прерываний">2</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">0</td>
+                    <td title="ШИМ">-</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">-</td>
+                    <td title="Схема Brown-Out Detection">-</td>
+                    <td title="Рабочая частота, МГц">0…4</td>
+                    <td title="Напряжение питания, В">2.7…5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">28</td>
+                    <td title="Кол-во ножек в корпусе SOIC">-</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">32</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">TQFP-32</td>
+                </tr>
+                <tr>
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/7jeygj0gkwtdo8a/ATtiny40.pdf">ATtiny40</a></td>
+                    <td title="Память программ (flash), КБ">4</td>
+                    <td title="EEPROM, Б">-</td>
+                    <td title="SRAM, Б">256</td>
+                    <td title="Кол-во команд">54</td>
+                    <td title="Кол-во линий ввода/вывода">18</td>
+                    <td title="Кол-во внешних источников прерываний">18</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">1</td>
+                    <td title="ШИМ">2</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">12</td>
+                    <td title="Схема Brown-Out Detection">-</td>
+                    <td title="Рабочая частота, МГц">0... 4<br> 0... 8<br> 0... 12</td>
+                    <td title="Напряжение питания, В">1.8... 5.5<br> 2.7... 5.5<br> 4.5...5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">-</td>
+                    <td title="Кол-во ножек в корпусе SOIC">20</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">-</td>
+                    <td title="Кол-во ножек в корпусе VQFN">20</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">TSSOP-20</td>
+                    <td class="normalRow" title="Документация"><a
+                            href="https://www.dropbox.com/s/agibga024v1gyti/Sum%20ATtiny40.pdf">Summary</a><br><a
+                            href="https://www.dropbox.com/s/7jeygj0gkwtdo8a/ATtiny40.pdf">Preliminary</a></td>
+                </tr>
+                <tr class="alternateRow">
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/nhvsgsqkfp40soc/ATtiny43U.pdf">ATtiny43U</a></td>
+                    <td title="Память программ (flash), КБ">4</td>
+                    <td title="EEPROM, Б">64</td>
+                    <td title="SRAM, Б">256</td>
+                    <td title="Кол-во команд">123</td>
+                    <td title="Кол-во линий ввода/вывода">16</td>
+                    <td title="Кол-во внешних источников прерываний">16</td>
+                    <td title="Кол-во 8-разрядн. таймеров">2</td>
+                    <td title="Кол-во 16-разрядн. таймеров">0</td>
+                    <td title="ШИМ">4</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">4</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0... 4<br> 0... 8</td>
+                    <td title="Напряжение питания, В">1.8... 5.5<br> 2.7... 5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">-</td>
+                    <td title="Кол-во ножек в корпусе SOIC">20</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">20</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                    <td class="normalRow" title="Документация"><a
+                            href="https://www.dropbox.com/s/s1q4pmq75r4hfr2/Sum%20ATtiny43U.pdf">Summary</a><br><a
+                            href="https://www.dropbox.com/s/nhvsgsqkfp40soc/ATtiny43U.pdf">Preliminary</a></td>
+                </tr>
+                <tr>
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/ntdb7pyhw7x0f6t/ATtiny2313A%2C4313.pdf">ATtiny4313</a></td>
+                    <td title="Память программ (flash), КБ">4</td>
+                    <td title="EEPROM, Б">256</td>
+                    <td title="SRAM, Б">256</td>
+                    <td title="Кол-во команд">120</td>
+                    <td title="Кол-во линий ввода/вывода">18</td>
+                    <td title="Кол-во внешних источников прерываний">18</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">1</td>
+                    <td title="ШИМ">4</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">-</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0... 4<br> 0... 10<br> 0... 20</td>
+                    <td title="Напряжение питания, В">1.8... 5.5<br> 2.7... 5.5<br> 4.5...5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">20</td>
+                    <td title="Кол-во ножек в корпусе SOIC">20</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">20</td>
+                    <td title="Кол-во ножек в корпусе VQFN">20</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                    <td class="normalRow" title="Документация"><a
+                            href="https://www.dropbox.com/s/u1xzxbc819tlrxn/Sum%20ATtiny2313A%2C4313.pdf">Summary</a><br>
+                        <a href="https://www.dropbox.com/s/zog9arkrzp6uall/ATtiny2313A%2C4313.pdf">Preliminary</a></td>
+                </tr>
+                <tr class="alternateRow">
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/qlt2fyd3bxq9wj1/ATtiny24%2C44%2C84.pdf">ATtiny44</a></td>
+                    <td title="Память программ (flash), КБ">4</td>
+                    <td title="EEPROM, Б">256</td>
+                    <td title="SRAM, Б">256</td>
+                    <td title="Кол-во команд">120</td>
+                    <td title="Кол-во линий ввода/вывода">12</td>
+                    <td title="Кол-во внешних источников прерываний">13</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">1</td>
+                    <td title="ШИМ">4</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">8+12</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0…10<br> 0…20</td>
+                    <td title="Напряжение питания, В">2.7…5.5<br> 4.5…5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">14</td>
+                    <td title="Кол-во ножек в корпусе SOIC">14</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">20</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                    <td class="normalRow" title="Документация" rowspan="2"><a
+                            href="https://www.dropbox.com/s/2g6wy47bqnh33ra/Sum%20ATtiny24%2C44%2C84.pdf">Summary</a><br>
+                        <a href="https://www.dropbox.com/s/qlt2fyd3bxq9wj1/ATtiny24%2C44%2C84.pdf">Preliminary</a></td>
+                </tr>
+                <tr>
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/qlt2fyd3bxq9wj1/ATtiny24%2C44%2C84.pdf">ATtiny44V</a></td>
+                    <td title="Память программ (flash), КБ">4</td>
+                    <td title="EEPROM, Б">256</td>
+                    <td title="SRAM, Б">256</td>
+                    <td title="Кол-во команд">120</td>
+                    <td title="Кол-во линий ввода/вывода">12</td>
+                    <td title="Кол-во внешних источников прерываний">13</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">1</td>
+                    <td title="ШИМ">4</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">8+12</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0…4<br> 0…10</td>
+                    <td title="Напряжение питания, В">1.8…5.5<br> 2.7…5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">14</td>
+                    <td title="Кол-во ножек в корпусе SOIC">14</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">20</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                </tr>
+                <tr class="alternateRow">
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/n65j5f7eaw8a38m/ATtiny24A%2C44A%2C84A.pdf">ATtiny44A</a>
+                    </td>
+                    <td title="Память программ (flash), КБ">4</td>
+                    <td title="EEPROM, Б">256</td>
+                    <td title="EEPROM, Б">256</td>
+                    <td title="Кол-во команд">120</td>
+                    <td title="Кол-во линий ввода/вывода">12</td>
+                    <td title="Кол-во внешних источников прерываний">12</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">1</td>
+                    <td title="ШИМ">4</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">8+12</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0…4<br> 0…20</td>
+                    <td title="Напряжение питания, В">1.8…5.5<br> 4.5 …5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">14</td>
+                    <td title="Кол-во ножек в корпусе SOIC">14</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">20</td>
+                    <td title="Кол-во ножек в корпусе VQFN">20</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">UFBGA-15</td>
+                    <td class="normalRow" title="Документация"><a
+                            href="https://www.dropbox.com/s/bxt8v9u7di8ijoz/Sum%20ATtiny24A%2C44A%2C84A.pdf">Summary</a><br>
+                        <a href="https://www.dropbox.com/s/n65j5f7eaw8a38m/ATtiny24A%2C44A%2C84A.pdf">Preliminary</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/pimhp867vx7v6ef/ATtiny441%2C841.pdf">ATtiny441</a></td>
+                    <td title="Память программ (flash), КБ">4</td>
+                    <td title="EEPROM, Б">256</td>
+                    <td title="SRAM, Б">256</td>
+                    <td title="Кол-во команд">120</td>
+                    <td title="Кол-во линий ввода/вывода">12</td>
+                    <td title="Кол-во внешних источников прерываний">12</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">2</td>
+                    <td title="ШИМ">6</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">12+46</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0... 2<br> 0... 4<br> 0... 10<br> 0... 16</td>
+                    <td title="Напряжение питания, В">1.7... 1.8<br> 1.8... 5.5<br> 2.7... 5.5<br> 4.5...5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">-</td>
+                    <td title="Кол-во ножек в корпусе SOIC">14</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">20</td>
+                    <td title="Кол-во ножек в корпусе VQFN">20</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                    <td class="normalRow" title="Документация"><a
+                            href="https://www.dropbox.com/s/7l55itbpm62mnkl/Sum%20ATtiny441%2C841.pdf">Summary</a><br><a
+                            href="https://www.dropbox.com/s/pimhp867vx7v6ef/ATtiny441%2C841.pdf">Preliminary</a></td>
+                </tr>
+                <tr class="alternateRow">
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/afhf7jial4ujbyi/ATtiny25%28V%29%2C45%28V%29%2C85%28V%29.pdf">ATtiny45</a>
+                    </td>
+                    <td title="Память программ (flash), КБ">4</td>
+                    <td title="EEPROM, Б">256</td>
+                    <td title="SRAM, Б">256</td>
+                    <td title="Кол-во команд">120</td>
+                    <td title="Кол-во линий ввода/вывода">6</td>
+                    <td title="Кол-во внешних источников прерываний">7</td>
+                    <td title="Кол-во 8-разрядн. таймеров">2</td>
+                    <td title="Кол-во 16-разрядн. таймеров">0</td>
+                    <td title="ШИМ">6</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">4+2</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0…10<br> 0…20</td>
+                    <td title="Напряжение питания, В">2.7…5.5<br> 4.5…5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">8</td>
+                    <td title="Кол-во ножек в корпусе SOIC">8</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">20</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">TSSOP_20</td>
+                    <td class="normalRow" title="Документация" rowspan="2"><a
+                            href="https://www.dropbox.com/s/ua9w8ciupnpkqvx/Sum%20ATtiny25%28V%29%2C45%28V%29%2C85%28V%29.pdf">Summary</a><br>
+                        <a
+                            href="https://www.dropbox.com/s/afhf7jial4ujbyi/ATtiny25%28V%29%2C45%28V%29%2C85%28V%29.pdf">Preliminary</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/afhf7jial4ujbyi/ATtiny25%28V%29%2C45%28V%29%2C85%28V%29.pdf">ATtiny45V</a>
+                    </td>
+                    <td title="Память программ (flash), КБ">4</td>
+                    <td title="EEPROM, Б">256</td>
+                    <td title="SRAM, Б">256</td>
+                    <td title="Кол-во команд">120</td>
+                    <td title="Кол-во линий ввода/вывода">6</td>
+                    <td title="Кол-во внешних источников прерываний">7</td>
+                    <td title="Кол-во 8-разрядн. таймеров">2</td>
+                    <td title="Кол-во 16-разрядн. таймеров">0</td>
+                    <td title="ШИМ">6</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">4+2</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0…4<br> 0…10</td>
+                    <td title="Напряжение питания, В">1.8…5.5<br> 2.7…5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">8</td>
+                    <td title="Кол-во ножек в корпусе SOIC">8</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">20</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">TSSOP-20</td>
+                </tr>
+                <tr class="alternateRow">
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/jybab7d2e6ofu6z/ATtiny261%28V%29%2C461%28V%29%2C861%28V%29.pdf">ATtiny461</a>
+                    </td>
+                    <td title="Память программ (flash), КБ">4</td>
+                    <td title="EEPROM, Б">256</td>
+                    <td title="EEPROM, Б">256</td>
+                    <td title="Кол-во команд">123</td>
+                    <td title="Кол-во линий ввода/вывода">16</td>
+                    <td title="Кол-во внешних источников прерываний">16</td>
+                    <td title="Кол-во 8-разрядн. таймеров" colspan="2">8/16-разр<br> 8/10-разр</td>
+                    <td title="ШИМ">6</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">11+16</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0…10<br> 0…20</td>
+                    <td title="Напряжение питания, В">2.7…5.5<br> 4.5…5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">20</td>
+                    <td title="Кол-во ножек в корпусе SOIC">20</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">32</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                    <td class="normalRow" title="Документация" rowspan="2"><a
+                            href="https://www.dropbox.com/s/3ayitrqvb0nhdxd/Sum%20ATtiny261%28V%29%2C461%28V%29%2C861%28V%29.pdf">Summary</a><br>
+                        <a
+                            href="https://www.dropbox.com/s/jybab7d2e6ofu6z/ATtiny261%28V%29%2C461%28V%29%2C861%28V%29.pdf">Preliminary</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/jybab7d2e6ofu6z/ATtiny261%28V%29%2C461%28V%29%2C861%28V%29.pdf">ATtiny461V</a>
+                    </td>
+                    <td title="Память программ (flash), КБ">4</td>
+                    <td title="EEPROM, Б">256</td>
+                    <td title="EEPROM, Б">256</td>
+                    <td title="Кол-во команд">123</td>
+                    <td title="Кол-во линий ввода/вывода">16</td>
+                    <td title="Кол-во внешних источников прерываний">16</td>
+                    <td title="Кол-во 8-разрядн. таймеров" colspan="2">8/16-разр<br> 8/10-разр</td>
+                    <td title="ШИМ">6</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">11+16</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0…4<br> 0…10</td>
+                    <td title="Напряжение питания, В">1.8…5.5<br> 2.7…5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">20</td>
+                    <td title="Кол-во ножек в корпусе SOIC">20</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">32</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                </tr>
+                <tr class="alternateRow">
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/kwo13i56c8oxxqc/ATtiny261A%2C461A%2C861A.pdf">ATtiny461A</a>
+                    </td>
+                    <td title="Память программ (flash), КБ">4</td>
+                    <td title="EEPROM, Б">256</td>
+                    <td title="EEPROM, Б">256</td>
+                    <td title="Кол-во команд">123</td>
+                    <td title="Кол-во линий ввода/вывода">16</td>
+                    <td title="Кол-во внешних источников прерываний">16</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">1</td>
+                    <td title="ШИМ">6</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">11+16</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0... 4<br> 0... 10<br> 0... 20</td>
+                    <td title="Напряжение питания, В">1.8... 5.5<br> 2.7... 5.5<br> 4.5...5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">20</td>
+                    <td title="Кол-во ножек в корпусе SOIC">20</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">32</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">TSSOP-20</td>
+                    <td class="normalRow" title="Документация"><a
+                            href="https://www.dropbox.com/s/h49pzqzmyfothy3/Sum%20ATtiny261A%2C461A%2C861A.pdf">Summary</a><br>
+                        <a href="https://www.dropbox.com/s/kwo13i56c8oxxqc/ATtiny261A%2C461A%2C861A.pdf">Preliminary</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/5moddlv3fqzj3q5/ATtiny48%2C88.pdf">ATtiny48</a></td>
+                    <td title="Память программ (flash), КБ">4K</td>
+                    <td title="EEPROM, Б">64</td>
+                    <td title="SRAM, Б">256</td>
+                    <td title="Кол-во команд">123</td>
+                    <td title="Кол-во линий ввода/вывода">24 (в<br>PDIP-28,<br>QFN-28);<br> 28</td>
+                    <td title="Кол-во внешних источников прерываний">28</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">1</td>
+                    <td title="ШИМ">2</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">6 (в<br>PDIP-28,<br>QFN-28);<br> 8</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0... 4<br> 0... 8<br> 0... 12</td>
+                    <td title="Напряжение питания, В">1.8... 5.5<br> 2.7... 5.5<br> 4.5...5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">28</td>
+                    <td title="Кол-во ножек в корпусе SOIC">-</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">28<br> 32</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">TQFP-32<br> UFBGA-32</td>
+                    <td class="normalRow" title="Документация"><a
+                            href="https://www.dropbox.com/s/1fl2msnjjfnp8ik/Sum%20ATtiny44%2C88.pdf">Summary</a><br> <a
+                            href="https://www.dropbox.com/s/5moddlv3fqzj3q5/ATtiny48%2C88.pdf">Preliminary</a></td>
+                </tr>
+                <tr class="alternateRow">
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/gqau1wel1kcdx7y/ATtiny828.pdf">ATtiny828</a></td>
+                    <td title="Память программ (flash), КБ">8</td>
+                    <td title="EEPROM, Б">256</td>
+                    <td title="SRAM, Б">512</td>
+                    <td title="Кол-во команд">123</td>
+                    <td title="Кол-во линий ввода/вывода">28</td>
+                    <td title="Кол-во внешних источников прерываний">28</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">1</td>
+                    <td title="ШИМ">4</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">28</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0... 2<br> 0... 4<br> 0... 10<br> 0... 20</td>
+                    <td title="Напряжение питания, В">1.7... 1.8<br> 1.8... 5.5<br> 2.7... 5.5<br> 4.5...5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">-</td>
+                    <td title="Кол-во ножек в корпусе SOIC">-</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">32</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">TQFP-32</td>
+                    <td class="normalRow" title="Документация"><a
+                            href="https://www.dropbox.com/s/6e7706o6vkivmr3/Sum%20ATtiny828.pdf">Summary</a><br><a
+                            href="https://www.dropbox.com/s/gqau1wel1kcdx7y/ATtiny828.pdf">Preliminary</a></td>
+                </tr>
+                <tr>
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/qlt2fyd3bxq9wj1/ATtiny24%2C44%2C84.pdf">ATtiny84</a></td>
+                    <td title="Память программ (flash), КБ">8</td>
+                    <td title="EEPROM, Б">512</td>
+                    <td title="SRAM, Б">512</td>
+                    <td title="Кол-во команд">120</td>
+                    <td title="Кол-во линий ввода/вывода">12</td>
+                    <td title="Кол-во внешних источников прерываний">13</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">1</td>
+                    <td title="ШИМ">4</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">8+12</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0…10<br> 0…20</td>
+                    <td title="Напряжение питания, В">2.7…5.5<br> 4.5…5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">14</td>
+                    <td title="Кол-во ножек в корпусе SOIC">14</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">20</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                    <td class="normalRow" title="Документация" rowspan="2"><a
+                            href="https://www.dropbox.com/s/2g6wy47bqnh33ra/Sum%20ATtiny24%2C44%2C84.pdf">Summary</a><br>
+                        <a href="https://www.dropbox.com/s/qlt2fyd3bxq9wj1/ATtiny24%2C44%2C84.pdf">Preliminary</a></td>
+                </tr>
+                <tr class="alternateRow">
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/qlt2fyd3bxq9wj1/ATtiny24%2C44%2C84.pdf">ATtiny84V</a></td>
+                    <td title="Память программ (flash), КБ">8</td>
+                    <td title="EEPROM, Б">512</td>
+                    <td title="SRAM, Б">512</td>
+                    <td title="Кол-во команд">120</td>
+                    <td title="Кол-во линий ввода/вывода">12</td>
+                    <td title="Кол-во внешних источников прерываний">13</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">1</td>
+                    <td title="ШИМ">4</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">8+12</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0…4<br> 0…10</td>
+                    <td title="Напряжение питания, В">1.8…5.5<br> 2.7…5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">14</td>
+                    <td title="Кол-во ножек в корпусе SOIC">14</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">20</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                </tr>
+                <tr>
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/n65j5f7eaw8a38m/ATtiny24A%2C44A%2C84A.pdf">ATtiny84A</a>
+                    </td>
+                    <td title="Память программ (flash), КБ">8</td>
+                    <td title="EEPROM, Б">512</td>
+                    <td title="EEPROM, Б">512</td>
+                    <td title="Кол-во команд">120</td>
+                    <td title="Кол-во линий ввода/вывода">12</td>
+                    <td title="Кол-во внешних источников прерываний">12</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">1</td>
+                    <td title="ШИМ">4</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">8+12</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0…4<br> 0…20</td>
+                    <td title="Напряжение питания, В">1.8…5.5<br> 4.5 …5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">14</td>
+                    <td title="Кол-во ножек в корпусе SOIC">14</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">20</td>
+                    <td title="Кол-во ножек в корпусе VQFN">20</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">UFBGA-15</td>
+                    <td class="normalRow" title="Документация"><a
+                            href="https://www.dropbox.com/s/bxt8v9u7di8ijoz/Sum%20ATtiny24A%2C44A%2C84A.pdf">Summary</a><br>
+                        <a href="https://www.dropbox.com/s/n65j5f7eaw8a38m/ATtiny24A%2C44A%2C84A.pdf">Preliminary</a>
+                    </td>
+                </tr>
+                <tr class="alternateRow">
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/pimhp867vx7v6ef/ATtiny441%2C841.pdf">ATtiny841</a></td>
+                    <td title="Память программ (flash), КБ">8</td>
+                    <td title="EEPROM, Б">512</td>
+                    <td title="SRAM, Б">512</td>
+                    <td title="Кол-во команд">120</td>
+                    <td title="Кол-во линий ввода/вывода">12</td>
+                    <td title="Кол-во внешних источников прерываний">12</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">2</td>
+                    <td title="ШИМ">6</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">12+46</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0... 2<br> 0... 4<br> 0... 10<br> 0... 16</td>
+                    <td title="Напряжение питания, В">1.7... 1.8<br> 1.8... 5.5<br> 2.7... 5.5<br> 4.5...5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">-</td>
+                    <td title="Кол-во ножек в корпусе SOIC">14</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">20</td>
+                    <td title="Кол-во ножек в корпусе VQFN">20</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                    <td class="normalRow" title="Документация"><a
+                            href="https://www.dropbox.com/s/7l55itbpm62mnkl/Sum%20ATtiny441%2C841.pdf">Summary</a><br>
+                        <a href="https://www.dropbox.com/s/pimhp867vx7v6ef/ATtiny441%2C841.pdf">Preliminary</a></td>
+                </tr>
+                <tr>
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/afhf7jial4ujbyi/ATtiny25%28V%29%2C45%28V%29%2C85%28V%29.pdf">ATtiny85</a>
+                    </td>
+                    <td title="Память программ (flash), КБ">8</td>
+                    <td title="EEPROM, Б">512</td>
+                    <td title="SRAM, Б">512</td>
+                    <td title="Кол-во команд">120</td>
+                    <td title="Кол-во линий ввода/вывода">6</td>
+                    <td title="Кол-во внешних источников прерываний">7</td>
+                    <td title="Кол-во 8-разрядн. таймеров">2</td>
+                    <td title="Кол-во 16-разрядн. таймеров">0</td>
+                    <td title="ШИМ">6</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">4+2</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0…10<br> 0…20</td>
+                    <td title="Напряжение питания, В">2.7…5.5<br> 4.5…5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">8</td>
+                    <td title="Кол-во ножек в корпусе SOIC">8</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">20</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                    <td class="normalRow" title="Документация" rowspan="2"><a
+                            href="https://www.dropbox.com/s/ua9w8ciupnpkqvx/Sum%20ATtiny25%28V%29%2C45%28V%29%2C85%28V%29.pdf">Summary</a><br>
+                        <a
+                            href="https://www.dropbox.com/s/afhf7jial4ujbyi/ATtiny25%28V%29%2C45%28V%29%2C85%28V%29.pdf">Preliminary</a>
+                    </td>
+                </tr>
+                <tr class="alternateRow">
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/afhf7jial4ujbyi/ATtiny25%28V%29%2C45%28V%29%2C85%28V%29.pdf">ATtiny85V</a>
+                    </td>
+                    <td title="Память программ (flash), КБ">8</td>
+                    <td title="EEPROM, Б">512</td>
+                    <td title="SRAM, Б">512</td>
+                    <td title="Кол-во команд">120</td>
+                    <td title="Кол-во линий ввода/вывода">6</td>
+                    <td title="Кол-во внешних источников прерываний">7</td>
+                    <td title="Кол-во 8-разрядн. таймеров">2</td>
+                    <td title="Кол-во 16-разрядн. таймеров">0</td>
+                    <td title="ШИМ">6</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">4+2</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0…4<br> 0…10</td>
+                    <td title="Напряжение питания, В">1.8…5.5<br> 2.7…5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">8</td>
+                    <td title="Кол-во ножек в корпусе SOIC">8</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">20</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                </tr>
+                <tr>
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/jybab7d2e6ofu6z/ATtiny261%28V%29%2C461%28V%29%2C861%28V%29.pdf">ATtiny861</a>
+                    </td>
+                    <td title="Память программ (flash), КБ">8</td>
+                    <td title="EEPROM, Б">512</td>
+                    <td title="EEPROM, Б">512</td>
+                    <td title="Кол-во команд">123</td>
+                    <td title="Кол-во линий ввода/вывода">16</td>
+                    <td title="Кол-во внешних источников прерываний">16</td>
+                    <td title="Кол-во 8-разрядн. таймеров" colspan="2">8/16-разр<br> 8/10-разр</td>
+                    <td title="ШИМ">6</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">11+16</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0…10<br> 0…20</td>
+                    <td title="Напряжение питания, В">2.7…5.5<br> 4.5…5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">20</td>
+                    <td title="Кол-во ножек в корпусе SOIC">20</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">32</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                    <td class="normalRow" title="Документация" rowspan="2"><a
+                            href="https://www.dropbox.com/s/3ayitrqvb0nhdxd/Sum%20ATtiny261%28V%29%2C461%28V%29%2C861%28V%29.pdf">Summary</a><br>
+                        <a
+                            href="https://www.dropbox.com/s/jybab7d2e6ofu6z/ATtiny261%28V%29%2C461%28V%29%2C861%28V%29.pdf">Preliminary</a>
+                    </td>
+                </tr>
+                <tr class="alternateRow">
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/jybab7d2e6ofu6z/ATtiny261%28V%29%2C461%28V%29%2C861%28V%29.pdf">ATtiny861V</a>
+                    </td>
+                    <td title="Память программ (flash), КБ">8</td>
+                    <td title="EEPROM, Б">512</td>
+                    <td title="EEPROM, Б">512</td>
+                    <td title="Кол-во команд">123</td>
+                    <td title="Кол-во линий ввода/вывода">16</td>
+                    <td title="Кол-во внешних источников прерываний">16</td>
+                    <td title="Кол-во 8-разрядн. таймеров" colspan="2">8/16-разр<br> 8/10-разр</td>
+                    <td title="ШИМ">6</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">11+16</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0…4<br> 0…10</td>
+                    <td title="Напряжение питания, В">1.8…5.5<br> 2.7…5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">20</td>
+                    <td title="Кол-во ножек в корпусе SOIC">20</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">32</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                </tr>
+                <tr>
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/kwo13i56c8oxxqc/ATtiny261A%2C461A%2C861A.pdf">ATtiny861A</a>
+                    </td>
+                    <td title="Память программ (flash), КБ">8</td>
+                    <td title="EEPROM, Б">512</td>
+                    <td title="EEPROM, Б">512</td>
+                    <td title="Кол-во команд">123</td>
+                    <td title="Кол-во линий ввода/вывода">16</td>
+                    <td title="Кол-во внешних источников прерываний">16</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">1</td>
+                    <td title="ШИМ">6</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">11+16</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0... 4<br> 0... 10<br> 0... 20</td>
+                    <td title="Напряжение питания, В">1.8... 5.5<br> 2.7... 5.5<br> 4.5...5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">20</td>
+                    <td title="Кол-во ножек в корпусе SOIC">20</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">32</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">TSSOP-20</td>
+                    <td class="normalRow" title="Документация"><a
+                            href="https://www.dropbox.com/s/h49pzqzmyfothy3/Sum%20ATtiny261A%2C461A%2C861A.pdf">Summary</a><br>
+                        <a href="https://www.dropbox.com/s/kwo13i56c8oxxqc/ATtiny261A%2C461A%2C861A.pdf">Preliminary</a>
+                    </td>
+                </tr>
+                <tr class="alternateRow">
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/xepqieky8ly8n9y/ATtiny87%2C167.pdf">ATtiny87</a></td>
+                    <td title="Память программ (flash), КБ">8</td>
+                    <td title="EEPROM, Б">512</td>
+                    <td title="SRAM, Б">512</td>
+                    <td title="Кол-во команд">123</td>
+                    <td title="Кол-во линий ввода/вывода">16</td>
+                    <td title="Кол-во внешних источников прерываний">16</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">1</td>
+                    <td title="ШИМ">9</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">11+8</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0... 4<br> 0... 8<br> 0... 16</td>
+                    <td title="Напряжение питания, В">1.8... 5.5<br> 2.7... 5.5<br> 4.5...5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">-</td>
+                    <td title="Кол-во ножек в корпусе SOIC">20</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">-</td>
+                    <td title="Кол-во ножек в корпусе VQFN">32</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">TSSOP-20</td>
+                    <td class="normalRow" title="Документация"><a
+                            href="https://www.dropbox.com/s/pw93p778pkwybky/Sum%20ATtiny87%2C167.pdf">Summary</a><br><a
+                            href="https://www.dropbox.com/s/xepqieky8ly8n9y/ATtiny87%2C167.pdf">Preliminary</a></td>
+                </tr>
+                <tr>
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/5moddlv3fqzj3q5/ATtiny48%2C88.pdf">ATtiny88</a></td>
+                    <td title="Память программ (flash), КБ">8</td>
+                    <td title="EEPROM, Б">64</td>
+                    <td title="SRAM, Б">512</td>
+                    <td title="Кол-во команд">123</td>
+                    <td title="Кол-во линий ввода/вывода">24 (в<br>PDIP-28,<br>QFN-28);<br> 28</td>
+                    <td title="Кол-во внешних источников прерываний">28</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">1</td>
+                    <td title="ШИМ">2</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">6 (в<br>PDIP-28,<br>QFN-28);<br> 8</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0... 4<br> 0... 8<br> 0... 12</td>
+                    <td title="Напряжение питания, В">1.8... 5.5<br> 2.7... 5.5<br> 4.5...5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">28</td>
+                    <td title="Кол-во ножек в корпусе SOIC">-</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">28<br> 32</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">TQFP-32<br> UFBGA-32</td>
+                    <td class="normalRow" title="Документация"><a
+                            href="https://www.dropbox.com/s/1fl2msnjjfnp8ik/Sum%20ATtiny44%2C88.pdf">Summary</a><br> <a
+                            href="https://www.dropbox.com/s/5moddlv3fqzj3q5/ATtiny48%2C88.pdf">Preliminary</a></td>
+                </tr>
+                <tr class="alternateRow">
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/6mu036g6prwejxo/ATtiny1634.pdf">ATtiny1634</a></td>
+                    <td title="Память программ (flash), КБ">16</td>
+                    <td title="EEPROM, Б">256</td>
+                    <td title="SRAM, Б">1K</td>
+                    <td title="Кол-во команд">125</td>
+                    <td title="Кол-во линий ввода/вывода">18</td>
+                    <td title="Кол-во внешних источников прерываний">18</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">1</td>
+                    <td title="ШИМ">4</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">12</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0... 2<br> 0... 8<br> 0... 12</td>
+                    <td title="Напряжение питания, В">1.8... 5.5<br> 2.7... 5.5<br> 4.5...5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">-</td>
+                    <td title="Кол-во ножек в корпусе SOIC">20</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">20</td>
+                    <td title="Кол-во ножек в корпусе VQFN">-</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">-</td>
+                    <td class="normalRow" title="Документация"><a
+                            href="https://www.dropbox.com/s/l72p2zp3taawmds/Sum%20ATtiny1634.pdf">Summary</a><br><a
+                            href="https://www.dropbox.com/s/6mu036g6prwejxo/ATtiny1634.pdf">Preliminary</a></td>
+                </tr>
+                <tr>
+                    <td title="Название микросхемы"><a
+                            href="https://www.dropbox.com/s/xepqieky8ly8n9y/ATtiny87%2C167.pdf">ATtiny167</a></td>
+                    <td title="Память программ (flash), КБ">16</td>
+                    <td title="EEPROM, Б">512</td>
+                    <td title="SRAM, Б">512</td>
+                    <td title="Кол-во команд">123</td>
+                    <td title="Кол-во линий ввода/вывода">16</td>
+                    <td title="Кол-во внешних источников прерываний">16</td>
+                    <td title="Кол-во 8-разрядн. таймеров">1</td>
+                    <td title="Кол-во 16-разрядн. таймеров">1</td>
+                    <td title="ШИМ">9</td>
+                    <td title="Кол-во каналов 10-разрядн. АЦП">11+8</td>
+                    <td title="Схема Brown-Out Detection">+</td>
+                    <td title="Рабочая частота, МГц">0... 4<br> 0... 8<br> 0... 16</td>
+                    <td title="Напряжение питания, В">1.8... 5.5<br> 2.7... 5.5<br> 4.5...5.5</td>
+                    <td title="Кол-во ножек в корпусе PDIP">-</td>
+                    <td title="Кол-во ножек в корпусе SOIC">20</td>
+                    <td title="Кол-во ножек в корпусе MLF/QFN">-</td>
+                    <td title="Кол-во ножек в корпусе VQFN">32</td>
+                    <td title="Другой тип корпуса - кол-во ножек в нём">TSSOP-20</td>
+                    <td class="normalRow" title="Документация"><a
+                            href="https://www.dropbox.com/s/pw93p778pkwybky/Sum%20ATtiny87%2C167.pdf">Summary</a><br> <a
+                            href="https://www.dropbox.com/s/xepqieky8ly8n9y/ATtiny87%2C167.pdf">Preliminary</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="info-section">
+        <div class="info-block">Info has been taken from <a href="http://avr.ru/docs/d-sheet/atiny">THIS</a> resource.
+        </div>
+        <div class="info-block">Some data can be update on this resource.</div>
+    </div>
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
