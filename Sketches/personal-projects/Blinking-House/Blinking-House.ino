@@ -27,7 +27,7 @@ int LIGHTS_COUNT = 15; // WARNING HERE SHOULD BE LENGTH OF "lightPins" ARRAY;
 int DELAY_TIME = 1000 * 30;
 
 int lightPins[15] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 17, 18, 19}; // WARNING HERE SHOULD BE "LIGHTS_COUNT" VALUE;
-int turnedOnLightPins[15] = { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1}; // WARNING HERE SHOULD BE "LIGHTS_COUNT" VALUE;
+int turnedOnLightPins[15] = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1}; // WARNING HERE SHOULD BE "LIGHTS_COUNT" VALUE;
 int usedLights = 0;
 
 void setup ()

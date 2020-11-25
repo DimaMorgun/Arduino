@@ -4,7 +4,15 @@ Arduino core designed for Attiny13 and similar devices.
 NO WARRANTEE OR GUARANTEES!
 Written by John "smeezekitty" 
 You are free to use, redistribute and modify at will EXCEPT IF MARKED OTHERWISE IN A PARTICULAR SOURCE FILE!
-Version 0.18
+Version 0.22
+// ATMEL ATTINY13 - ARDUINO
+//
+//                  +-\/-+
+// AinX (D X) PB5  1|    |8  Vcc
+// AinX (D X) PB3  2|    |7  PB2 (D X)  AinX
+// AinX (D X) PB4  3|    |6  PB1 (D X) PWM
+//            GND  4|    |5  PB0 (D X) PWM
+//                  +----+
 */
 #ifndef Wiring_h
 #define Wiring_h
@@ -18,6 +26,8 @@ extern "C"{
 #define INPUT 0
 #define OUTPUT 1
 #define false 0
+#define FALSE 0
+#define TRUE 1
 #define true 1
 #define PI 3.1416
 #define HALF_PI 1.57
@@ -31,7 +41,7 @@ extern "C"{
 #define CHANGE 1
 #define FALLING 2
 #define RISING 3
-#define INTERNAL 0
+#define INTERNAL 1
 #define EXTERNAL 0
 #define DEFAULT 0
 #ifdef abs
@@ -65,12 +75,12 @@ void pinMode(uint8_t, uint8_t);
 void digitalWrite(uint8_t, uint8_t);
 uint8_t digitalRead(uint8_t);
 int analogRead(uint8_t); 
-//void analogReference(uint8_t mode);
+void analogReference(uint8_t mode);
 void analogWrite(uint8_t, uint8_t);
 unsigned long millis(void);
 unsigned long micros(void);
 void delay(unsigned ms);
-void delayMicroseconds(unsigned int us);
+void delayMicroseconds(int us);
 void shiftOut(uint8_t, uint8_t, uint8_t, uint8_t);
 uint8_t shiftIn(uint8_t, uint8_t, uint8_t);
 unsigned long pulseIn(unsigned char pin, unsigned char stat, unsigned long timeout);
